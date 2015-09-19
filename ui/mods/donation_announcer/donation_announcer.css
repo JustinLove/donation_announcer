@@ -17,14 +17,14 @@ body-dock {
   min-height: 75px;
 }
 
-.donation_panel {
+.donation_announcer {
   margin-top: 100px;
   margin-bottom: 50px;
   font-size: 12px;
   font-family: 'Armata Regular';
 }
 
-.donation_panel_control {
+.donation_announcer_control {
   border-image:url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 22 22 22;
   border-width:14px 22px 22px 22px;
   box-shadow: inset 1000px 1000px 1000px 1000px #000;
@@ -33,7 +33,7 @@ body-dock {
   min-height: 5em;
 }
 
-.donation_panel_cont {
+.donation_announcer_cont {
   border-image:url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 22 22 22;
   border-width:14px 22px 22px 22px;
   box-shadow: inset 1000px 1000px 1000px 1000px #000;
@@ -41,12 +41,12 @@ body-dock {
   position: relative;
 }
 
-.donation_panel h3 {
+.donation_announcer h3 {
   margin: 0;
   margin-bottom: -8px;
 }
 
-.donation_panel table {
+.donation_announcer table {
   max-height: 80vh;
   overflow-y: auto;
   overflow-x: visible;

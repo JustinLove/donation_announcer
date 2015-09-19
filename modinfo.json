@@ -5,25 +5,25 @@
   "context": "client",
   "date": "2015/09/14",
   "description": "Pull in the donation feed for the ablegamers tournament, and display an in-game panel; really only useful during puppetmaster chairity tournaments.",
-  "display_name": "Donation Panel (AbleGamers)",
+  "display_name": "Donation Announcer (AbleGamers)",
   "forum": "https://forums.uberent.com/threads/wip-donation-panel.62576/",
-  "identifier": "com.wondible.pa.donation_panel",
+  "identifier": "com.wondible.pa.donation_announcer",
   "priority": 100,
   "scenes": {
     "global_mod_list": [
-      "coui://ui/mods/donation_panel/keybinding.js"
+      "coui://ui/mods/donation_announcer/keybinding.js"
     ],
     "settings": [
-      "coui://ui/mods/donation_panel/settings.js"
+      "coui://ui/mods/donation_announcer/settings.js"
     ],
     "live_game": [
-      "coui://ui/mods/donation_panel/live_game.js"
+      "coui://ui/mods/donation_announcer/live_game.js"
     ],
     "live_game_options_bar": [
-      "coui://ui/mods/donation_panel/live_game_options_bar.js"
+      "coui://ui/mods/donation_announcer/live_game_options_bar.js"
     ]
   },
   "signature": "not yet implemented",
-  "version": "1.1.0"
+  "version": "1.0.0"
 }
 

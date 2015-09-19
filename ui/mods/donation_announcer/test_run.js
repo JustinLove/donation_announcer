@@ -1,10 +1,10 @@
 (function() {
   var paths = require.s.contexts._.config.paths
-  paths.donation_panel = 'coui://ui/mods/donation_panel'
+  paths.donation_announcer = 'coui://ui/mods/donation_announcer'
   paths.sandbox_unit_menu = 'coui://ui/mods/sandbox_unit_menu'
 })()
 
-require(['donation_panel/feed', 'donation_panel/panel'], function(feed, panel) {
+require(['donation_announcer/feed', 'donation_announcer/panel'], function(feed, panel) {
   setTimeout(function() {
     feed.testUpdate().then(function(donors) {
       donors.forEach(function(item) {

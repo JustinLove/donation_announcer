@@ -6,10 +6,10 @@ var handlers = {};
 (function() {
   var paths = require.s.contexts._.config.paths
   paths.sandbox_unit_menu = 'coui://ui/mods/sandbox_unit_menu'
-  paths.donation_panel = 'coui://ui/mods/donation_panel'
+  paths.donation_announcer = 'coui://ui/mods/donation_announcer'
 })();
 
-require(['donation_panel/feed_view'], function(feed_view) {
+require(['donation_announcer/feed_view'], function(feed_view) {
   "use strict";
 
   model = feed_view

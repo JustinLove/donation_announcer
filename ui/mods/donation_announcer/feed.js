@@ -1,4 +1,4 @@
-define(['donation_panel/menu'], function(menu) {
+define(['donation_announcer/menu'], function(menu) {
   var process = function(json) {
     if (!json.activities.entries) return []
     return json.activities.entries.filter(function(entry) {
@@ -34,8 +34,8 @@ define(['donation_panel/menu'], function(menu) {
   }
 
   var testSequence = [
-    "coui://ui/mods/donation_panel/test.json",
-    "coui://ui/mods/donation_panel/test2.json",
+    "coui://ui/mods/donation_announcer/test.json",
+    "coui://ui/mods/donation_announcer/test2.json",
   ]
 
   var testUpdate = function() {

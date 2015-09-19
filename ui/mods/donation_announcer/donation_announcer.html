@@ -2,16 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<noloc><title>Live Game: Donation Panel</title></noloc>
+<noloc><title>Live Game: Donation Announcer</title></noloc>
 <link href="bundle://boot/boot.css" rel="stylesheet" type="text/css" />
-<link href="donation_panel.css" rel="stylesheet" type="text/css" />
+<link href="donation_announcer.css" rel="stylesheet" type="text/css" />
 <script src="bundle://boot/boot.js" type="text/javascript"></script>
-<script src="donation_panel.js" type="text/javascript"></script>
+<script src="donation_announcer.js" type="text/javascript"></script>
 </head>
   <div class="body_panel">
     <body-dock>
-      <div class="donation_panel" data-bind="visible: visible">
-        <div class="donation_panel_cont">
+      <div class="donation_announcer" data-bind="visible: visible">
+        <div class="donation_announcer_cont">
           <table data-bind="foreach: donations">
             <tbody data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">
               <tr>
@@ -44,8 +44,8 @@
             <span class="minimum" data-bind="text: currentMin"></span>
           </div>
         </div>
-        <div class="donation_panel_control">
-          <h3 data-bind="text: name">Donation Panel</h3>
+        <div class="donation_announcer_control">
+          <h3 data-bind="text: name">Donation Announcer</h3>
         </div>
       </div>
     </body-dock>

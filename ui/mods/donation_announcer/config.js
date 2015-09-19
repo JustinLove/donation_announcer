@@ -1,6 +1,6 @@
 define(function() {
   var setting = function() {
-    return api.settings.isSet('ui', 'donation_panel_feed', true) || 'Test'
+    return api.settings.isSet('ui', 'donation_announcer_feed', true) || 'Test'
   }
   return {
     name: function() {

@@ -1,7 +1,7 @@
 define([
-  'donation_panel/config',
-  'donation_panel/feed',
-  'donation_panel/donation'
+  'donation_announcer/config',
+  'donation_announcer/feed',
+  'donation_announcer/donation'
 ], function(config, feed, Donation) {
   var nullOrder = {build: []}
   var unfinished = function(donation) {return !donation.finished()}
@@ -87,9 +87,9 @@ define([
     ready: function() {
       console.log('ready')
       api.Panel.message(api.Panel.parentId, 'request_player_names',
-        ['donation_panel', 'player_names'])
+        ['donation_announcer', 'player_names'])
       api.Panel.message(api.Panel.parentId, 'request_planet_names',
-        ['donation_panel', 'planet_names'])
+        ['donation_announcer', 'planet_names'])
       setTimeout(autoUpdate, 1000)
     },
   }
