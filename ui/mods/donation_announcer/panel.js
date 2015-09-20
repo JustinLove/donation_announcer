@@ -1,10 +1,6 @@
 define(function() {
   var insertPanel = function(model) {
-    var $panel = $('<panel id="donation_announcer"></panel>').css({
-      visibility: 'visible',
-      position: 'absolute',
-      bottom: 0,
-    }).attr({
+    var $panel = $('<panel id="donation_announcer"></panel>').attr({
       name: "donation_announcer",
       src: "coui://ui/mods/donation_announcer/donation_announcer.html",
       'no-keyboard': true,
@@ -12,7 +8,9 @@ define(function() {
       fit: "dock-bottom",
       'data-bind': 'visible: visible',
     })
-    $panel.appendTo('body')
+    $('<div class="donation_announcer_foundation"></div>')
+      .append($panel)
+      .appendTo('body')
     ko.applyBindings(model, $panel[0])
     api.Panel.bindElement($panel[0])
   }
