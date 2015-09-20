@@ -15,7 +15,7 @@ body-dock {
   top: 0;
   right: 0;
   min-height: 200px;
-  min-width: 400px;
+  min-width: 600px;
   max-width: 800px;
 }
 
@@ -33,20 +33,33 @@ body-dock {
   position: relative;
 }
 
-.waiting_list {
-  list-style-type: none:
-}
-
-.waiting_item {
-  display: inline;
-}
-
 .current_donation.insufficient {
   background: #800;
 }
 
 .current_donation.finished {
   opacity: 0.5;
+}
+
+.donation_list {
+  list-style-type: none:
+}
+
+.donation_item {
+  display: inline;
+  background: #2a2;
+  color: black;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  line-height: 1.5em;
+}
+
+.donation_item.selected {
+  color: white;
+}
+
+.donation_item.finished {
+  opacity: 0.3;
 }
 
 .amount {
