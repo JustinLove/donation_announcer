@@ -25,10 +25,11 @@ body-dock {
 }
 
 .donation_announcer_cont {
-  border-image:url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 22 22 22;
-  border-width:14px 22px 22px 22px;
-  box-shadow: inset 1000px 1000px 1000px 1000px #000;
-  margin:-13px 8px -30px 8px;
+  margin: -2px 39px -20px;
+
+  border-image: url(coui://ui/main/shared/img/build_bar/img_build_bar_menu_bground.png) 35 35 23 35 fill;
+  border-width: 35px 35px 23px 35px;
+
   position: relative;
 }
 
