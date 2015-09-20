@@ -24,7 +24,7 @@
               <div class="comment" data-bind="text: comment">comment</div>
             </div>
           </div>
-          <ul class="waiting_list" data-bind="foreach: donations">
+          <ul class="waiting_list" data-bind="foreach: waitingDonations">
             <li class="waiting_item" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">*</li>
           </ul>
         </div>

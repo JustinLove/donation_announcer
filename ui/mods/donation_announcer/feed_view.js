@@ -3,12 +3,14 @@ define([
   'donation_announcer/feed',
   'donation_announcer/donation'
 ], function(config, feed, Donation) {
-  var nullOrder = {build: []}
+  var speed = 1000
+
   var unfinished = function(donation) {return !donation.finished()}
 
   var knownDonations = {}
 
   var integrateDonations = function(incoming) {
+    var before = viewModel.waitingDonations().length
     incoming.forEach(function(d) {
       if (!knownDonations[d.id]) {
         var dm = Donation(d)
@@ -18,6 +20,9 @@ define([
         viewModel.donations.push(dm)
       }
     })
+    if (before == 0 && viewModel.waitingDonations().length > before) {
+      viewModel.executeNext()
+    }
   }
 
   var autoUpdate = function() {
@@ -25,32 +30,25 @@ define([
     setTimeout(autoUpdate, 10000)
   }
 
+  var showTimeout
+
   var viewModel = {
     visible: ko.observable(true),
     name: ko.observable(config.name()),
-    cheatAllowCreateUnit: ko.observable(false).extend({session: 'cheat_allow_create_unit'}),
     playerNames: ko.observableArray([]),
     planetNames: ko.observableArray([]),
     donations: ko.observableArray([]),
     currentDonation: ko.observable(Donation({})),
-    currentOrder: ko.observable(nullOrder),
     select: function(donation) {
       viewModel.currentDonation().selected(false)
       viewModel.currentDonation(donation)
       donation.selected(true)
-      api.Panel.message('devmode', 'improved_player_control_change', donation.matchingPlayerIndex)
-      if (donation.matchingPlanetIndex != -1) {
-        api.Panel.message(api.Panel.parentId, 'planets.click', donation.matchingPlanetIndex)
-        api.audio.playSound('/SE/UI/UI_planet_switch_select');
+      if (showTimeout) {
+        clearTimeout(showTimeout)
       }
-
-      if (!viewModel.cheatAllowCreateUnit()) {
-        donation.finished(true)
-        return
-      }
-
-      donation.finished(true)
-      viewModel.currentOrder(nullOrder)
+      showTimeout = setTimeout(function() {
+        viewModel.executeNext()
+      }, (5 + donation.amount) * speed)
     },
     cancel: function(donation) {
       donation.finished(true)
@@ -58,19 +56,17 @@ define([
     executeNext: function() {
       donation = viewModel.currentDonation()
       donation.finished(true)
-      viewModel.select(viewModel.donationWithOrders())
+      viewModel.select(viewModel.nextDonation())
     },
-    donationWithOrders: function() {
-      return viewModel.donations().filter(function(donation) {
-        return donation.orders().length > 0 && !donation.insufficient()
-      })[0] || Donation({})
+    nextDonation: function() {
+      return viewModel.waitingDonations()[0] || Donation({})
     },
     update: function() {
       viewModel.name(config.name())
       feed[config.feed()]().then(integrateDonations)
     },
     reap: function() {
-      viewModel.donations(viewModel.donations().filter(unfinished))
+      viewModel.donations(viewModel.waitingDonations())
     },
     manualUpdate: function() {
       viewModel.reap()
@@ -86,9 +82,10 @@ define([
     },
   }
 
-  viewModel.currentOrder.subscribe(function(order) {
-    api.Panel.message(api.Panel.parentId, 'sandbox_menu_item', order)
+  viewModel.waitingDonations = ko.computed(function() {
+    return viewModel.donations().filter(unfinished)
   })
+
   viewModel.playerNames.subscribe(function(names) {
     viewModel.donations().forEach(function(donation) {
       donation.matchPlayers(names)

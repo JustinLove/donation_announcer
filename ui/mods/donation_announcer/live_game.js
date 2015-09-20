@@ -21,11 +21,6 @@ require(['donation_announcer/panel'], function(panel) {
   panel.show()
 
   /*
-  api.Panel.message('donation_announcer', 'cheat_allow_create_unit', model.cheatAllowCreateUnit())
-  model.cheatAllowCreateUnit.subscribe(function(value) {
-    api.Panel.message('donation_announcer', 'cheat_allow_create_unit', value)
-  })
-
   model.playerData.subscribe(function(value) {
     api.Panel.message('donation_announcer', 'player_names', value.names)
   })

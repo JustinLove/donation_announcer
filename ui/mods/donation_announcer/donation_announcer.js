@@ -18,8 +18,6 @@ require(['donation_announcer/feed_view'], function(feed_view) {
 
   handlers.update_feed = model.manualUpdate
 
-  handlers.cheat_allow_create_unit = model.cheatAllowCreateUnit
-
   handlers.player_names = model.playerNames
   handlers.planet_names = model.planetNames
 
