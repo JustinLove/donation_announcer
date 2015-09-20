@@ -24,15 +24,6 @@ body-dock {
   font-family: 'Armata Regular';
 }
 
-.donation_announcer_control {
-  border-image:url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 22 22 22;
-  border-width:14px 22px 22px 22px;
-  box-shadow: inset 1000px 1000px 1000px 1000px #000;
-  position: relative;
-  min-width: 20em;
-  min-height: 5em;
-}
-
 .donation_announcer_cont {
   border-image:url(coui://ui/main/shared/img/panel/img_menu_panel.png) 14 22 22 22;
   border-width:14px 22px 22px 22px;
@@ -41,34 +32,19 @@ body-dock {
   position: relative;
 }
 
-.donation_announcer h3 {
-  margin: 0;
-  margin-bottom: -8px;
+.waiting_list {
+  list-style-type: none:
 }
 
-.donation_announcer table {
-  max-height: 80vh;
-  overflow-y: auto;
-  overflow-x: visible;
+.waiting_item {
+  display: inline;
 }
 
-tbody {
-  border: solid #1e7aa1 1px;
-}
-
-tbody:hover {
-  background:#00b3ff;
-}
-
-tbody.selected {
-  background:#1e7aa1;
-}
-
-tbody.insufficient {
+.current_donation.insufficient {
   background: #800;
 }
 
-tbody.finished {
+.current_donation.finished {
   opacity: 0.5;
 }
 

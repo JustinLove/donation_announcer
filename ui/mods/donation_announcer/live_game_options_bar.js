@@ -7,7 +7,7 @@
     if (model.donationAnnouncerLoading()) {
       return 'coui://ui/mods/donation_announcer/wide_loading.gif'
     } else {
-      return 'img/ingame_options_bar/game_menu.png'
+      return 'img/players_list_panel/icon_visibility.png'
     }
   })
   $('.div_ingame_options_bar_cont').prepend(

@@ -49,28 +49,20 @@ define([
         return
       }
 
-      if (donation.unexecutedOrders().length > 0) {
-        viewModel.currentOrder(donation.unexecutedOrders.shift())
-      } else {
-        donation.finished(true)
-        viewModel.currentOrder(nullOrder)
-      }
+      donation.finished(true)
+      viewModel.currentOrder(nullOrder)
     },
     cancel: function(donation) {
       donation.finished(true)
     },
     executeNext: function() {
       donation = viewModel.currentDonation()
-      if (donation.unexecutedOrders().length > 0) {
-        viewModel.currentOrder(donation.unexecutedOrders.shift())
-      } else {
-        donation.finished(true)
-        viewModel.select(viewModel.donationWithOrders())
-      }
+      donation.finished(true)
+      viewModel.select(viewModel.donationWithOrders())
     },
     donationWithOrders: function() {
       return viewModel.donations().filter(function(donation) {
-        return donation.unexecutedOrders().length > 0 && !donation.insufficient()
+        return donation.orders().length > 0 && !donation.insufficient()
       })[0] || Donation({})
     },
     update: function() {
@@ -94,12 +86,6 @@ define([
     },
   }
 
-  viewModel.currentCode = ko.computed(function() {
-    return viewModel.currentOrder().code
-  })
-  viewModel.currentMin = ko.computed(function() {
-    return viewModel.currentOrder().donation
-  })
   viewModel.currentOrder.subscribe(function(order) {
     api.Panel.message(api.Panel.parentId, 'sandbox_menu_item', order)
   })

@@ -4,13 +4,12 @@ define(function() {
       visibility: 'visible',
       position: 'absolute',
       bottom: 0,
-      right: 0,
     }).attr({
       name: "donation_announcer",
       src: "coui://ui/mods/donation_announcer/donation_announcer.html",
       'no-keyboard': true,
       'yield-focus': true,
-      fit: "dock-bottom-right",
+      fit: "dock-bottom",
       'data-bind': 'visible: visible',
     })
     $panel.appendTo('body')

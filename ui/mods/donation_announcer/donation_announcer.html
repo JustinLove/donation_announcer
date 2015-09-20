@@ -12,40 +12,21 @@
     <body-dock>
       <div class="donation_announcer" data-bind="visible: visible">
         <div class="donation_announcer_cont">
-          <table data-bind="foreach: donations">
-            <tbody data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">
-              <tr>
-                <td class="amount" data-bind="text: amount">$$</td>
-                <td class="min-total" data-bind="text: minimum">$$</td>
-                <td class="donor" data-bind="text: donor">Doner</td>
-                <td class="cancel" data-bind="click: function(donation, e) {$parent.cancel(donation); e.stopPropagation()}">X</td>
-              </tr>
-              <tr>
-                <td colspan="4">
-                  <span data-bind="foreach: matchingPlayers">
-                    <span class="player" data-bind="text: $data"></span>
-                  </span>
-                  <span data-bind="foreach: matchingPlanets">
-                    <span class="planet" data-bind="text: $data"></span>
-                  </span>
-                  <span colspan="4" data-bind="foreach: unexecutedOrders">
-                    <span class="uncode" data-bind="text: code"></span>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td class="comment" data-bind="text: comment" colspan="4">comment</td>
-              </tr>
-            </tbody>
-          </table>
-          <div data-bind="visible: cheatAllowCreateUnit">
-            <input type="button" class="btn_commit"  data-bind="click: executeNext" value="NEXT"/>
-            <span class="code" data-bind="text: currentCode"></span>
-            <span class="minimum" data-bind="text: currentMin"></span>
+          <div data-bind="with: currentDonation">
+            <div class="current_donation" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">
+              <div class="amount" data-bind="text: amount">$$</div>
+              <div class="min-total" data-bind="text: minimum">$$</div>
+              <div class="donor" data-bind="text: donor">Doner</div>
+              <div class="cancel" data-bind="click: function(donation, e) {$parent.cancel(donation); e.stopPropagation()}">X</div>
+                <span data-bind="foreach: orders">
+                  <span class="code" data-bind="text: code"></span>
+                </span>
+              <div class="comment" data-bind="text: comment">comment</div>
+            </div>
           </div>
-        </div>
-        <div class="donation_announcer_control">
-          <h3 data-bind="text: name">Donation Announcer</h3>
+          <ul class="waiting_list" data-bind="foreach: donations">
+            <li class="waiting_item" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">*</li>
+          </ul>
         </div>
       </div>
     </body-dock>

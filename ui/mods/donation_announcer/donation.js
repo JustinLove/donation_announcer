@@ -42,7 +42,7 @@ define(function() {
         while (credit >= item.donation) {
           credit -= item.donation
           model.minimum += item.donation
-          model.unexecutedOrders.push(item)
+          model.orders.push(item)
         }
       }
     }
@@ -51,10 +51,12 @@ define(function() {
   var constructor = function(donation) {
     var model = Object.create(prototype)
     $.extend(model, donation)
+    model.amount = model.amount || 0
+    model.donor = model.donor || 'anonymous'
+    model.comment = model.comment || ''
     model.selected = ko.observable(false)
     model.finished = ko.observable(false)
     model.orders = model.orders || []
-    model.unexecutedOrders = ko.observableArray(model.orders.concat())
     model.minimum = model.orders
       .map(function(o) {return o.donation})
       .reduce(function(a, b) {return a + b}, 0)
