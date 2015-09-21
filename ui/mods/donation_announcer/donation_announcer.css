@@ -46,17 +46,30 @@ body-dock {
   opacity: 0.5;
 }
 
-.cancel {
+.remove {
   position: absolute;
   top: 0;
-  right: 0;
-  color: #F00;
+  left: 0;
+  color: #400;
   font-weight: bold;
 }
 
-.cancel:hover {
+.remove:hover {
   color: black;
   background-color: red;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #044;
+  font-weight: bold;
+}
+
+.next:hover {
+  color: black;
+  background-color: #0FF;
 }
 
 .amount {
@@ -145,14 +158,22 @@ body-dock {
 
 .min-total {
   position: absolute;
-  bottom: 0px;
+  bottom: -16px;
   right: 0px;
   color: #444;
   font-weight: bold;
 }
 
+.min-total:hover {
+  color: white;
+}
+
 .insufficient .min-total {
   background: #400;
+}
+
+.insufficient .min-total:hover {
+  background: #F00;
 }
 
 .donation_list {

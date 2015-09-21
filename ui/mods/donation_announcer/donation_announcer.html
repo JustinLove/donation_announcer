@@ -15,7 +15,8 @@
         <div class="donation_announcer_cont">
           <div data-bind="with: currentDonation">
             <div class="current_donation" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">
-              <div class="cancel" data-bind="click: function(donation, e) {$parent.cancel(donation); e.stopPropagation()}">X</div>
+              <div class="remove" data-bind="click: function(donation, e) {$parent.remove(); e.stopPropagation()}">X</div>
+              <div class="next" data-bind="click: function(donation, e) {$parent.executeNext(); e.stopPropagation()}">&gt;</div>
               <div class="amount">
                 $<span data-bind="text: amount">$$</span>
               </div>
@@ -27,8 +28,8 @@
                     <img class="img_build_unit" data-bind="attr: { src: buildIcon }" />
                   </div>
                 </div>
+                <div class="min-total" data-bind="text: minimum">$$</div>
               </div>
-              <div class="min-total" data-bind="text: minimum">$$</div>
               <div class="donor">
                 <img class="donor_image" data-bind="attr: { src: donor_image }" />
                 <div class="donor_name" data-bind="text: donor_name">Doner</div>

@@ -50,8 +50,12 @@ define([
         viewModel.executeNext()
       }, (5 + donation.amount) * speed)
     },
-    cancel: function(donation) {
-      donation.finished(true)
+    remove: function() {
+      donation = viewModel.currentDonation()
+      viewModel.donations(viewModel.donations().filter(function(d) {
+        return d != donation
+      }))
+      viewModel.select(viewModel.nextDonation())
     },
     executeNext: function() {
       donation = viewModel.currentDonation()
