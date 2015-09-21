@@ -14,14 +14,20 @@
         <div class="donation_announcer_cont">
           <div data-bind="with: currentDonation">
             <div class="current_donation" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">
-              <div class="amount" data-bind="text: amount">$$</div>
-              <div class="min-total" data-bind="text: minimum">$$</div>
-              <div class="donor" data-bind="text: donor">Doner</div>
               <div class="cancel" data-bind="click: function(donation, e) {$parent.cancel(donation); e.stopPropagation()}">X</div>
-                <span data-bind="foreach: orders">
+              <div class="amount">
+                $<span data-bind="text: amount">$$</span>
+              </div>
+              <div class="body">
+                <div class="comment" data-bind="text: comment"></div>
+                <div class="orders" data-bind="foreach: orders">
                   <span class="code" data-bind="text: code"></span>
-                </span>
-              <div class="comment" data-bind="text: comment">comment</div>
+                </div>
+              </div>
+              <div class="min-total" data-bind="text: minimum">$$</div>
+              <div class="donor">
+                <div class="donor_name" data-bind="text: donor">Doner</div>
+              </div>
             </div>
           </div>
           <ul class="donation_list" data-bind="foreach: donations">

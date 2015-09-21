@@ -33,12 +33,76 @@ body-dock {
   position: relative;
 }
 
-.current_donation.insufficient {
-  background: #800;
+.current_donation {
+  min-height: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .current_donation.finished {
   opacity: 0.5;
+}
+
+.cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #F00;
+  font-weight: bold;
+}
+
+.cancel:hover {
+  color: black;
+  background-color: red;
+}
+
+.amount {
+  font-size: 36px;
+  font-weight: bold;
+  color: #080;
+}
+
+.amount span {
+  color: #0f0;
+}
+
+.body {
+  position: relative;
+  flex: 2;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.comment {
+  font-size: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.orders {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.donor_name {
+  color: #888;
+}
+
+.min-total {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #444;
+  font-weight: bold;
+}
+
+.insufficient .min-total {
+  background: #400;
 }
 
 .donation_list {
@@ -60,36 +124,6 @@ body-dock {
 
 .donation_item.finished {
   opacity: 0.3;
-}
-
-.amount {
-  text-align: right;
-  color: #0f0;
-  font-weight: bold;
-  padding-right: 0.5em;
-}
-
-.min-total {
-  text-align: right;
-  color: #ff0;
-  font-weight: bold;
-}
-
-.donor {
-  text-align: right;
-  color: #888;
-}
-
-.cancel {
-  text-align: right;
-  color: #F00;
-  padding-left: 1em;
-  font-weight: bold;
-}
-
-.cancel:hover {
-  color: black;
-  background-color: red;
 }
 
 .code {
@@ -116,11 +150,3 @@ body-dock {
   color: black;
   font-weight: bold;
 }
-
-.minimum {
-  font-size: 20px;
-  color: #ff0;
-  font-weight: bold;
-  padding-left: 1em;
-}
-
