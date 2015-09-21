@@ -43,7 +43,7 @@ body-dock {
 }
 
 .current_donation.finished {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .remove {
@@ -74,10 +74,6 @@ body-dock {
 
 .donor {
   text-align: center;
-}
-
-.donor_name {
-  color: #888;
 }
 
 .donor_image {

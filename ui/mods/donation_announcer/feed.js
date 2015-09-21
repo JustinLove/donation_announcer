@@ -13,7 +13,7 @@ define(['donation_announcer/menu'], function(menu) {
       if (loadImage) {
         var donor_image = donation.owner.pictureUrl.replace(/^\/\//, 'https://')
       } else {
-        var donor_name = ''
+        var donor_image = ''
       }
 
       var codes = comment.match(menu.codes) || []
