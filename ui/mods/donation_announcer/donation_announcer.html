@@ -6,6 +6,7 @@
 <link href="bundle://boot/boot.css" rel="stylesheet" type="text/css" />
 <link href="donation_announcer.css" rel="stylesheet" type="text/css" />
 <script src="bundle://boot/boot.js" type="text/javascript"></script>
+<script src="coui://ui/main/shared/js/build.js" type="text/javascript"></script>
 <script src="donation_announcer.js" type="text/javascript"></script>
 </head>
   <div class="body_panel">
@@ -20,8 +21,11 @@
               </div>
               <div class="body">
                 <div class="comment" data-bind="text: comment"></div>
-                <div class="orders" data-bind="foreach: orders">
-                  <span class="code" data-bind="text: code"></span>
+                <div class="units" data-bind="foreach: units">
+                  <div class="div_build_item">
+                    <span class="span_build_count stat_num" data-bind="text: count"></span>
+                    <img class="img_build_unit" data-bind="attr: { src: buildIcon }" />
+                  </div>
                 </div>
               </div>
               <div class="min-total" data-bind="text: minimum">$$</div>

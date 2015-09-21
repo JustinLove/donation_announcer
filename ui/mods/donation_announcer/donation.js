@@ -48,6 +48,25 @@ define(function() {
     }
   }
 
+  var consolidateUnits = function(model) {
+    model.orders.forEach(function(order) {
+      order.build.forEach(function(item) {
+        matches = model.units.filter(function(unit) {
+          return unit.id == item[1]
+        })
+        if (matches.length > 0) {
+          matches[0].count += item[0]
+        } else {
+          model.units.push({
+            count: item[0],
+            id: item[1],
+            buildIcon: Build.iconForSpecId(item[1]),
+          })
+        }
+      })
+    })
+  }
+
   var constructor = function(donation) {
     var model = Object.create(prototype)
     $.extend(model, donation)
@@ -57,12 +76,14 @@ define(function() {
     model.selected = ko.observable(false)
     model.finished = ko.observable(false)
     model.orders = model.orders || []
+    model.units = []
     model.minimum = model.orders
       .map(function(o) {return o.donation})
       .reduce(function(a, b) {return a + b}, 0)
     model.insufficient = ko.observable(model.minimum > model.amount)
 
     expandSimpleMultiples(model)
+    consolidateUnits(model)
 
     model.matchingPlayers = ko.observable()
     model.matchingPlayerIndex = -1

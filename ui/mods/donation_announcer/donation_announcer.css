@@ -74,6 +74,9 @@ body-dock {
   flex: 2;
   margin-left: 2em;
   margin-right: 2em;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
 }
 
 .comment {
@@ -82,11 +85,49 @@ body-dock {
   z-index: 1;
 }
 
-.orders {
+.units {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 0;
+  opacity: 0.8;
+}
+
+.div_build_item {
+  height: 62px;
+  width: 62px;
+  border: 1px solid transparent;
+  border-right: 1px solid #002A3D;
+  border-bottom: 1px solid #002A3D;
+  margin: 0px -1px -1px 0px;
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  -webkit-animation: fadeout;
+  -webkit-transition: .3s ease-out;
+  /*z-index: -1;*/
+}
+
+.img_build_unit {
+  height: 60px;
+  width: 60px;
+  display:block;
+  margin: 0px auto;
+}
+
+.span_build_count {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  background: #00b300;
+  padding: 0px 2px;
+  border-radius: 0px;
+  font-family: 'Trebuchet MS';
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 0px 0px 10px #000;
+  border: 1px solid #00FF00;
+  box-shadow: 0px 0px 20px #00ff00;
 }
 
 .donor_name {
