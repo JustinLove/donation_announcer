@@ -49,7 +49,7 @@ body-dock {
   position: absolute;
   top: 0;
   left: 0;
-  color: #400;
+  color: #800;
   font-weight: bold;
   padding: 0.2em;
 }
@@ -63,7 +63,7 @@ body-dock {
   position: absolute;
   top: 0;
   right: 0;
-  color: #044;
+  color: #066;
   font-weight: bold;
   padding: 0.2em;
 }
@@ -158,7 +158,7 @@ body-dock {
   position: absolute;
   bottom: -16px;
   right: 0px;
-  color: #444;
+  color: #666;
   font-weight: bold;
 }
 
