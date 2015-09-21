@@ -71,7 +71,8 @@ define(function() {
     var model = Object.create(prototype)
     $.extend(model, donation)
     model.amount = model.amount || 0
-    model.donor = model.donor || 'anonymous'
+    model.donor_name = model.donor_name || 'anonymous'
+    model.donor_image = model.donor_image || ''
     model.comment = model.comment || ''
     model.selected = ko.observable(false)
     model.finished = ko.observable(false)
