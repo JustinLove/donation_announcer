@@ -3,7 +3,7 @@
     donation_announcer_feed: {
       title: 'Donation Feed',
       type: 'select',
-      options: ['fundrazr_test', 'fundrazr_live'],
+      options: ['fundrazr_test', 'fundrazr_live', 'gofundme_test', 'gofundme_live'],
       default: 'fundrazr_test'
     }
   }
