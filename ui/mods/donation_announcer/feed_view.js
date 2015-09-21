@@ -21,7 +21,7 @@ define([
       }
     })
     if (before == 0 && viewModel.waitingDonations().length > before) {
-      viewModel.executeNext()
+      viewModel.nextDonation()
     }
   }
 
@@ -47,7 +47,7 @@ define([
         clearTimeout(showTimeout)
       }
       showTimeout = setTimeout(function() {
-        viewModel.executeNext()
+        viewModel.nextDonation()
       }, (5 + donation.amount) * speed)
     },
     remove: function() {
@@ -55,14 +55,14 @@ define([
       viewModel.donations(viewModel.donations().filter(function(d) {
         return d != donation
       }))
-      viewModel.select(viewModel.nextDonation())
-    },
-    executeNext: function() {
-      donation = viewModel.currentDonation()
-      donation.finished(true)
-      viewModel.select(viewModel.nextDonation())
+      viewModel.select(viewModel.next())
     },
     nextDonation: function() {
+      donation = viewModel.currentDonation()
+      donation.finished(true)
+      viewModel.select(viewModel.next())
+    },
+    next: function() {
       return viewModel.waitingDonations()[0] || Donation({})
     },
     update: function() {

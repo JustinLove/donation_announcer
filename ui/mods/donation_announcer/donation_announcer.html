@@ -16,7 +16,7 @@
           <div data-bind="with: currentDonation">
             <div class="current_donation" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">
               <div class="remove" data-bind="click: function(donation, e) {$parent.remove(); e.stopPropagation()}">X</div>
-              <div class="next" data-bind="click: function(donation, e) {$parent.executeNext(); e.stopPropagation()}">&gt;</div>
+              <div class="next" data-bind="click: function(donation, e) {$parent.nextDonation(); e.stopPropagation()}">&gt;</div>
 
               <div class="donor">
                 <img class="donor_image" data-bind="attr: { src: donor_image }" />

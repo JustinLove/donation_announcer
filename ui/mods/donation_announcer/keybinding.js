@@ -1,8 +1,8 @@
-action_sets.hacks.next_donation_order = function () {
-  api.Panel.message('donation_announcer', 'execute_next')
+action_sets.hacks.next_donation = function () {
+  api.Panel.message('donation_announcer', 'next_donation')
 }
-api.settings.definitions.keyboard.settings.next_donation_order = {
-  title: 'next donation order',
+api.settings.definitions.keyboard.settings.next_donation = {
+  title: 'next donation',
   type: 'keybind',
   set: 'mods',
   display_group: 'mods',
