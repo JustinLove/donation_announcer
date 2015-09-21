@@ -9,6 +9,5 @@
 
 #donation_announcer {
   display: inline-block;
-  min-width: 400px;
-  max-width: 800px;
+  width: 800px;
 }

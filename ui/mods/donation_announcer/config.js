@@ -7,11 +7,7 @@ define(function() {
       return setting()
     },
     feed: function() {
-      if (setting() == 'AbleGamers') {
-        return 'update'
-      } else {
-        return 'testUpdate'
-      }
+      return setting()
     }
   }
 })

@@ -3,8 +3,8 @@
     donation_announcer_feed: {
       title: 'Donation Feed',
       type: 'select',
-      options: ['AbleGamers', 'Test'],
-      default: 'Test'
+      options: ['fundrazr_test', 'fundrazr_live'],
+      default: 'fundrazr_test'
     }
   }
 

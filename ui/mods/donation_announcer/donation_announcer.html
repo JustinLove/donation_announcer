@@ -15,8 +15,8 @@
         <div class="donation_announcer_cont">
           <div data-bind="with: currentDonation">
             <div class="current_donation" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}">
-              <div class="remove" data-bind="click: function(donation, e) {$parent.remove(); e.stopPropagation()}">X</div>
-              <div class="next" data-bind="click: function(donation, e) {$parent.nextDonation(); e.stopPropagation()}">&gt;</div>
+              <div class="remove" data-bind="click: function(donation, e) {$parent.remove(); e.stopPropagation()}, tooltip: 'Remove Donation'">X</div>
+              <div class="next" data-bind="click: function(donation, e) {$parent.nextDonation(); e.stopPropagation()}, tooltip: 'Next Donation'">&gt;</div>
 
               <div class="donor">
                 <img class="donor_image" data-bind="attr: { src: donor_image }" />
@@ -38,7 +38,7 @@
             </div>
           </div>
           <ul class="donation_list" data-bind="foreach: donations">
-            <li class="donation_item" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}"><span data-bind="text: amount">00</span></li>
+            <li class="donation_item" data-bind="click: function() {$parent.select($data)}, css: {selected: selected, finished: finished, insufficient: insufficient}, tooltip: comment"><span data-bind="text: amount">00</span></li>
           </ul>
         </div>
       </div>

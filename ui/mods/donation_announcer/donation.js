@@ -1,4 +1,4 @@
-define(function() {
+define(['donation_announcer/menu'], function(menu) {
   var prototype = {
     matchPlayers: function(players) {
       var words = this.comment.match(/\b\w{3,}\b/g)
@@ -76,7 +76,11 @@ define(function() {
     model.comment = model.comment || ''
     model.selected = ko.observable(false)
     model.finished = ko.observable(false)
-    model.orders = model.orders || []
+
+    var codes = model.comment.match(menu.codes) || []
+    model.codes = codes.map(function(s) {return s.toUpperCase()})
+    model.orders = model.codes.map(function(c) {return JSON.parse(JSON.stringify(menu.menuMap[c]))}) || []
+
     model.units = []
     model.minimum = model.orders
       .map(function(o) {return o.donation})
