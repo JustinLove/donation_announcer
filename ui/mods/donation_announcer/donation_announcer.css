@@ -34,6 +34,7 @@ body-dock {
 
 .current_donation {
   min-height: 100px;
+  margin-top: -10px;
   position: relative;
   display: flex;
   align-items: center;
@@ -80,6 +81,7 @@ body-dock {
 .donor_image {
   width: 50px;
   height: 50px;
+  margin: 6px;
 }
 
 .body {
@@ -87,23 +89,21 @@ body-dock {
   flex: 2;
   margin-left: 2em;
   margin-right: 2em;
-  min-height: 62px;
+  min-height: 80px;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
 }
 
 .comment {
-  font-size: 24px;
+  font-size: 12px;
   position: relative;
   z-index: 1;
 }
 
 .units {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: relative;
   z-index: 0;
-  opacity: 0.8;
 }
 
 .div_build_item {
@@ -143,11 +143,16 @@ body-dock {
   box-shadow: 0px 0px 20px #00ff00;
 }
 
+.money {
+  text-align: center;
+}
+
 .amount {
   font-size: 36px;
   font-weight: bold;
   color: #080;
   min-width: 2em;
+  margin: 6px;
 }
 
 .amount span {
@@ -155,10 +160,8 @@ body-dock {
 }
 
 .min-total {
-  position: absolute;
-  bottom: -16px;
-  right: 0px;
   color: #666;
+  font-size: 12px;
   font-weight: bold;
 }
 
