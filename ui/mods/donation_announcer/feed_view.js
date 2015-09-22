@@ -43,6 +43,13 @@ define([
       viewModel.currentDonation().selected(false)
       viewModel.currentDonation(donation)
       donation.selected(true)
+
+      if (donation.amount > 0) {
+        viewModel.visible(true)
+      } else {
+        viewModel.visible(false)
+      }
+
       if (showTimeout) {
         clearTimeout(showTimeout)
       }
@@ -88,6 +95,10 @@ define([
 
   viewModel.waitingDonations = ko.computed(function() {
     return viewModel.donations().filter(unfinished)
+  })
+
+  viewModel.visible.subscribe(function(value) {
+    api.Panel.message(api.Panel.parentId, 'panel.invoke', ['showDonationAnnouncer', value]);
   })
 
   viewModel.playerNames.subscribe(function(names) {

@@ -36,6 +36,8 @@ define(function() {
     viewModel.visible(!viewModel.visible())
   }
 
+  model.showDonationAnnouncer = viewModel.visible
+
   return {
     insert: insert,
     viewModel: viewModel,
