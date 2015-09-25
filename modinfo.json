@@ -1,9 +1,9 @@
 {
   "author": "wondible",
-  "build": "87296",
+  "build": "88288",
   "category": ["sandbox", "ui"],
   "context": "client",
-  "date": "2015/09/14",
+  "date": "2015/09/25",
   "description": "Pull in the donation feed for the ablegamers tournament, and display an in-game panel; really only useful during puppetmaster chairity tournaments.",
   "display_name": "Donation Announcer (AbleGamers)",
   "forum": "https://forums.uberent.com/threads/wip-donation-panel.62576/",
@@ -25,6 +25,6 @@
     ]
   },
   "signature": "not yet implemented",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
 
