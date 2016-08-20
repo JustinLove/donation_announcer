@@ -1,6 +1,6 @@
 define([], function() {
   var process = function(html) {
-    // trim: leadig blank line will throw invalid
+    // trim: leading blank line will throw invalid
     var $doners = $(html.trim()).find(".doner")
     //console.log([html, $doners])
     return $doners.map(function(i, doner) {
