@@ -16,6 +16,10 @@
     "settings": [
       "coui://ui/mods/donation_announcer/settings.js"
     ],
+    "start": [
+      "coui://ui/mods/donation_announcer/live_game.css",
+      "coui://ui/mods/donation_announcer/live_game.js"
+    ],
     "live_game": [
       "coui://ui/mods/donation_announcer/live_game.css",
       "coui://ui/mods/donation_announcer/live_game.js"
