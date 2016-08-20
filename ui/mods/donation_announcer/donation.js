@@ -67,6 +67,23 @@ define(['donation_announcer/menu'], function(menu) {
     })
   }
 
+  var compressBulkMultiples = function(model) {
+    var i = 0
+    while (i+1 < model.orders.length) {
+      var base = model.orders[i]
+      var next = model.orders[i+1]
+      if (base.code == next.code
+       && base.build.length == 1
+       && base.build[0][0] > 1) {
+        base.donation += next.donation
+        base.build[0][0] += next.build[0][0]
+        model.orders.splice(i+1, 1)
+      } else {
+        i++
+      }
+    }
+  }
+
   var constructor = function(donation) {
     var model = Object.create(prototype)
     $.extend(model, donation)
@@ -80,6 +97,8 @@ define(['donation_announcer/menu'], function(menu) {
 
     model.codes = menu.match(model.comment)
     model.orders = menu.orders(model.codes)
+
+    compressBulkMultiples(model)
 
     model.units = []
     model.minimum = model.orders

@@ -3,8 +3,27 @@ define(function() {
     menu: [],
     menuMap: {},
     match: function(comment) {
-      var codes = comment.replace(/x/i, ' ').match(menu.codes) || []
-      return codes.map(function(s) {return s.toUpperCase()})
+      var coder = menu.codes.source
+      var multicoder = new RegExp("(" + coder + ")[\\sx]+\\d+", "gi")
+      var multicodes = comment.match(multicoder)
+      if (multicodes) {
+        return _.flatten(multicodes.map(function(s) {
+          var extractor = new RegExp("(" + coder + ")[\\sx]+(\\d+)", "i")
+          var match = s.match(extractor)
+          if (match) {
+            var c = match[1].toUpperCase()
+            var n = parseInt(match[2], 10)
+            var a = new Array(n)
+            for (var i = 0;i < n;i++) {a[i] = c}
+            return a
+          } else {
+            return []
+          }
+        }))
+      } else {
+        var codes = comment.replace(/x/i, ' ').match(menu.codes) || []
+        return codes.map(function(s) {return s.toUpperCase()})
+      }
     },
     orders: function(codes) {
       return codes.map(function(c) {
