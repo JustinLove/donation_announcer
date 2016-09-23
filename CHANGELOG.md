@@ -1,5 +1,10 @@
 # Donation Announcer Changelog
 
+## 1.2.1
+
+- Update donordrive scrape formatting based on current event page
+- Widen display for large donations
+
 ## 1.2.0
 
 - Add donordrive support

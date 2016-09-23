@@ -1,6 +1,7 @@
 define(['donation_announcer/donordrive/parse'], function(parse) {
   var testSequence = [
     //"coui://ui/mods/donation_announcer/donordrive/sample.htm",
+    "coui://ui/mods/donation_announcer/donordrive/sample201609.html",
     "coui://ui/mods/donation_announcer/donordrive/test.htm",
   ]
 

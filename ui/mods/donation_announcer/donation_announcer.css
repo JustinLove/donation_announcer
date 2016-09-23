@@ -14,8 +14,8 @@ body-dock {
   position: absolute;
   top: 40px;
   right: 0;
-  min-height: 220px;
-  width: 800px;
+  min-height: 320px;
+  width: 900px;
 }
 
 .donation_announcer {
@@ -29,7 +29,9 @@ body-dock {
   border-image: url(coui://ui/main/shared/img/build_bar/img_build_bar_menu_bground.png) 35 35 23 35 fill;
   border-width: 35px 35px 23px 35px;
 
-  position: relative;
+  position: absolute;
+  width: 860px;
+  bottom: 80px;
 }
 
 .current_donation {
