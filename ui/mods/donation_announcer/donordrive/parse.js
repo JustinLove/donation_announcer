@@ -16,7 +16,7 @@ define([], function() {
         amount: amount,
         comment: comment,
         donor_name: donor_name,
-        donor_image: donor_image,
+        //donor_image: donor_image,
         id: donor_name + amount.toString() + comment,
       }
     }).get().reverse()

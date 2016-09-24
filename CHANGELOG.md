@@ -1,9 +1,10 @@
 # Donation Announcer Changelog
 
-## 1.2.1
+## 1.3.0
 
 - Update donordrive scrape formatting based on current event page
 - Widen display for large donations
+- Allow panel to be opened when all donations have expired
 
 ## 1.2.0
 

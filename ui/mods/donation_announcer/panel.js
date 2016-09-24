@@ -29,6 +29,8 @@ define(function() {
   viewModel.visible.subscribe(function(visible) {
     if (visible && !inserted) {
       insert()
+    } else if (visible) {
+      api.Panel.message('donation_announcer', 'set_visible', visible)
     }
   })
 

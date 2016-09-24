@@ -14,6 +14,8 @@ require(['donation_announcer/feed_view'], function(feed_view) {
 
   model = feed_view
 
+  handlers.set_visible = model.visible
+
   handlers.next_donation = model.nextDonation
 
   handlers.update_feed = model.manualUpdate
