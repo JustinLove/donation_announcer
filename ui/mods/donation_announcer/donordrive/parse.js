@@ -10,13 +10,14 @@ define([], function() {
       var amount = parseInt(donorAmount[1].match(/\d+(\.\d+)?/)[0], 10)
       var donor_name = donorAmount[0].trim()
       var donor_image = $(donor).find('ximg.member-avatar').attr('src').replace(/^\/\//, 'http://')
-      var comment = $('<div/>').html($(donor).find('em').html().replace(/<br>/g, "\n")).text().trim()
+      var comment = $(donor).find('em').html() || ''
+      comment = $('<div/>').html(comment.replace(/<br>/g, "\n")).text().trim()
 
       return {
         amount: amount,
         comment: comment,
         donor_name: donor_name,
-        //donor_image: donor_image,
+        donor_image: donor_image,
         id: donor_name + amount.toString() + comment,
       }
     }).get().reverse()

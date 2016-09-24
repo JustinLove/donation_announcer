@@ -1,5 +1,9 @@
 # Donation Announcer Changelog
 
+## 1.3.1
+
+- Prevent error when donation has no comment
+
 ## 1.3.0
 
 - Update donordrive scrape formatting based on current event page
