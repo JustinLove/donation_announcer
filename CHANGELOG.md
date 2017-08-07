@@ -1,5 +1,9 @@
 # Donation Announcer Changelog
 
+## 1.4.0
+
+- Add sample feed form 2016 event
+
 ## 1.3.1
 
 - Prevent error when donation has no comment
