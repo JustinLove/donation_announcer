@@ -6,6 +6,7 @@ var handlers = {};
 (function() {
   var paths = require.s.contexts._.config.paths
   paths.sandbox_unit_menu = 'coui://ui/mods/sandbox_unit_menu'
+  paths.donation_data = 'coui://ui/mods/donation_data'
   paths.donation_announcer = 'coui://ui/mods/donation_announcer'
 })();
 

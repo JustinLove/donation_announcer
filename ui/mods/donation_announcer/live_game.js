@@ -1,6 +1,7 @@
 (function() {
   var paths = require.s.contexts._.config.paths
   paths.donation_announcer = 'coui://ui/mods/donation_announcer'
+  paths.donation_data = 'coui://ui/mods/donation_data'
   paths.sandbox_unit_menu = 'coui://ui/mods/sandbox_unit_menu'
 
   handlers.request_player_names = function(payload) {

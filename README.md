@@ -1,6 +1,6 @@
 # Donation Announcer
 
-Queries the GoFundmePage (currently only [AbleGamers event](https://fundrazr.com/campaigns/a11wc4/ab/753y8a?)) recent donations page fragment and displays it in-game.  Items can be marked as finished, and will then be culled when the feed is manually refreshed.  Automatic refresh is currently 10 seconds.
+Queries the various data sources via the Donation Data mod for recent donations page fragment and displays it in-game.  Items can be marked as finished, and will then be culled when the feed is manually refreshed.  Automatic refresh is currently 10 seconds.
 
 ## Keybinds (defaults)
 
@@ -12,6 +12,10 @@ Queries the GoFundmePage (currently only [AbleGamers event](https://fundrazr.com
 The mod loads canned test pages by default.  The current feed can be changed to feed for the Community AbleGamers Tournament in the settings.
 
 ## Integrations
+
+### Donation Data (required)
+
+Contains data feeds, shared with Donation Panel
 
 ### Improved Player Control
 

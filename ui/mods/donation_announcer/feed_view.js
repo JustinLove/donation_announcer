@@ -1,6 +1,6 @@
 define([
-  'donation_announcer/config',
-  'donation_announcer/feed',
+  'donation_data/config',
+  'donation_data/feed',
   'donation_announcer/donation'
 ], function(config, feed, Donation) {
   var speed = 1000

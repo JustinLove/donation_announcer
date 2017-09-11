@@ -1,5 +1,9 @@
 # Donation Announcer Changelog
 
+## 2.0.0
+
+- Extract data sources to Donation Data
+
 ## 1.4.0
 
 - Add sample feed form 2016 event
