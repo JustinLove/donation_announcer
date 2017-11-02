@@ -26,8 +26,13 @@ define([
   }
 
   var autoUpdate = function() {
-    viewModel.update()
-    setTimeout(autoUpdate, 10000)
+    if (feed[config.feed()].subscribe) {
+      viewModel.update()
+      feed[config.feed()].subscribe(integrateDonations)
+    } else {
+      viewModel.update()
+      setTimeout(autoUpdate, 10000)
+    }
   }
 
   var showTimeout

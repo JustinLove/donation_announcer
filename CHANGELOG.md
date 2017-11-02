@@ -1,5 +1,9 @@
 # Donation Announcer Changelog
 
+## 2.1.0
+
+- Support subcribable data sources
+
 ## 2.0.0
 
 - Extract data sources to Donation Data
