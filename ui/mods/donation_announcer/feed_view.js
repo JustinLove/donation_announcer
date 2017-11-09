@@ -27,7 +27,6 @@ define([
 
   var autoUpdate = function() {
     if (feed[config.feed()].subscribe) {
-      viewModel.update()
       feed[config.feed()].subscribe(integrateDonations)
     } else {
       viewModel.update()
