@@ -1,4 +1,4 @@
-define(['donation_announcer/menu'], function(menu) {
+define(['sandbox_unit_menu/discounts'], function(discounts) {
   var prototype = {
     matchPlayers: function(players) {
       var words = this.comment.match(/\b\w{3,}\b/g)
@@ -23,7 +23,31 @@ define(['donation_announcer/menu'], function(menu) {
       if (this.matchingPlanets().length == 1) {
         this.matchingPlanetIndex = planets.indexOf(this.matchingPlanets()[0])
       }
-    }
+    },
+    matchMenu: function(menu) {
+      this.codes = menu.match(this.comment)
+      if (typeof(this.discount_level) == "number") {
+        this.orders = discounts.discounts(menu.orders(this.codes), this.discount_level)
+      } else {
+        this.orders = menu.orders(this.codes)
+      }
+
+      compressBulkMultiples(this)
+
+      this.unexecutedOrders = ko.observableArray(this.orders.concat())
+
+      this.minimum = this.orders
+        .map(function(o) {return o.donation})
+        .reduce(function(a, b) {return a + b}, 0)
+      this.insufficient = ko.observable(this.minimum > this.amount)
+
+      expandSimpleMultiples(this)
+      consolidateUnits(this)
+
+      this.unaccounted = this.minimum < this.amount
+
+      this.priority = this.amount - this.minimum
+    },
   }
 
   var expandSimpleMultiples = function(model) {
@@ -95,19 +119,12 @@ define(['donation_announcer/menu'], function(menu) {
     model.selected = ko.observable(false)
     model.finished = ko.observable(false)
 
-    model.codes = menu.match(model.comment)
-    model.orders = menu.orders(model.codes)
-
-    compressBulkMultiples(model)
-
+    model.codes = []
+    model.orders = []
     model.units = []
-    model.minimum = model.orders
-      .map(function(o) {return o.donation})
-      .reduce(function(a, b) {return a + b}, 0)
-    model.insufficient = ko.observable(model.minimum > model.amount)
-
-    expandSimpleMultiples(model)
-    consolidateUnits(model)
+    model.minimum = 0
+    model.insufficient = ko.observable(false)
+    model.priority = 0
 
     model.matchingPlayers = ko.observable()
     model.matchingPlayerIndex = -1

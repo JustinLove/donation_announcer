@@ -1,5 +1,9 @@
 # Donation Announcer Changelog
 
+## 2.2.0
+
+- Apply donation specific discount level if available
+
 ## 2.1.0
 
 - Support subcribable data sources

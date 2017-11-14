@@ -1,8 +1,9 @@
 define([
   'donation_data/config',
   'donation_data/feed',
-  'donation_announcer/donation'
-], function(config, feed, Donation) {
+  'donation_announcer/donation',
+  'donation_announcer/menu'
+], function(config, feed, Donation, menu) {
   var speed = 1000
 
   var unfinished = function(donation) {return !donation.finished()}
@@ -14,6 +15,7 @@ define([
     incoming.forEach(function(d) {
       if (!knownDonations[d.id]) {
         var dm = Donation(d)
+        dm.matchMenu(menu)
         dm.matchPlayers(viewModel.playerNames())
         dm.matchPlanets(viewModel.planetNames())
         knownDonations[d.id] = dm
