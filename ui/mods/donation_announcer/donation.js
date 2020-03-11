@@ -55,7 +55,7 @@ define(['sandbox_unit_menu/discounts'], function(discounts) {
       var credit = model.amount
       var item = model.orders[0]
       credit -= item.donation
-      if (item.build.length == 1 && item.build[0][0] > 1) {
+      if (item.build.length == 1 && !item.build.individual) {
         var step = item.build[0][0]
         while (credit >= item.donation) {
           credit -= item.donation
@@ -98,7 +98,7 @@ define(['sandbox_unit_menu/discounts'], function(discounts) {
       var next = model.orders[i+1]
       if (base.code == next.code
        && base.build.length == 1
-       && base.build[0][0] > 1) {
+       && !base.individual) {
         base.donation += next.donation
         base.build[0][0] += next.build[0][0]
         model.orders.splice(i+1, 1)
