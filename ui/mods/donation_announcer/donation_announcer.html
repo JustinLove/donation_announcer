@@ -19,7 +19,7 @@
               <div class="next" data-bind="click: function(donation, e) {$parent.nextDonation(); e.stopPropagation()}, tooltip: 'Next Donation'">&gt;</div>
 
               <div class="donor">
-                <img class="donor_image" data-bind="attr: { src: donor_image }" />
+                <img class="donor_image" data-bind="attr: { src: donor_image }, visible: donor_image" />
                 <div class="donor_name" data-bind="text: donor_name">Doner</div>
               </div>
               <div class="body">
