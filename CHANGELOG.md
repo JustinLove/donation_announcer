@@ -1,5 +1,10 @@
 # Donation Announcer Changelog
 
+## 2.3.0
+
+- Use specific individual flag for item splits (may be irrelvant to this)
+- Hide donor image if not present, which it isn't with tiltify
+
 ## 2.2.0
 
 - Apply donation specific discount level if available

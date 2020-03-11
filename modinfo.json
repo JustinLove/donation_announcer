@@ -3,7 +3,7 @@
   "build": "105067",
   "category": ["sandbox"],
   "context": "client",
-  "date": "2017/11/14",
+  "date": "2020/03/10",
   "dependencies": [
     "com.wondible.pa.donation_data"
   ],
@@ -25,6 +25,6 @@
     ]
   },
   "signature": "not yet implemented",
-  "version": "2.2.0"
+  "version": "2.3.0"
 }
 
